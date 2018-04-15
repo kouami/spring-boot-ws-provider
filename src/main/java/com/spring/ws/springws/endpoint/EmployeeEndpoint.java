@@ -62,7 +62,7 @@ public class EmployeeEndpoint {
      * @return
      */
     private Employee getEmployeesById(BigInteger id) {
-        
+
         return dao.getEmployeeList().stream().filter(emp -> emp.getEmpId().equals(id)).findFirst().get();
     }
 
