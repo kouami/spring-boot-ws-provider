@@ -1,0 +1,41 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<xs:schema xmlns:xs="http://www.w3.org/2001/XMLSchema" elementFormDefault="qualified" targetNamespace="http://www.xpadro.spring.samples.com/employees" xmlns:employees="http://www.xpadro.spring.samples.com/employees">
+  <xs:element name="GetEmployeeRequest">
+    <xs:complexType>
+      <xs:choice>
+        <xs:element ref="employees:id"/>
+        <xs:element ref="employees:searchCriteria"/>
+      </xs:choice>
+    </xs:complexType>
+  </xs:element>
+  <xs:element name="id" type="xs:integer"/>
+  <xs:element name="searchCriteria" type="xs:string"/>
+  <xs:element name="GetEmployeeResponse">
+    <xs:complexType>
+      <xs:sequence>
+        <xs:element ref="employees:employees"/>
+      </xs:sequence>
+    </xs:complexType>
+  </xs:element>
+  <xs:element name="employees">
+    <xs:complexType>
+      <xs:sequence>
+        <xs:element minOccurs="0" maxOccurs="unbounded" ref="employees:employee"/>
+      </xs:sequence>
+    </xs:complexType>
+  </xs:element>
+  <xs:element name="employee">
+    <xs:complexType>
+      <xs:sequence>
+        <xs:element ref="employees:empId"/>
+        <xs:element ref="employees:firstName"/>
+        <xs:element ref="employees:lastName"/>
+        <xs:element ref="employees:gender"/>
+      </xs:sequence>
+    </xs:complexType>
+  </xs:element>
+  <xs:element name="empId" type="xs:integer"/>
+  <xs:element name="firstName" type="xs:string"/>
+  <xs:element name="lastName" type="xs:string"/>
+  <xs:element name="gender" type="xs:string"/>
+</xs:schema>

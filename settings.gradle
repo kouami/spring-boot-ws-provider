@@ -1,0 +1,5 @@
+rootProject.name = 'spring-ws'
+include 'schemas'
+include 'data'
+include 'domains'
+
